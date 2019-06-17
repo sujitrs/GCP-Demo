@@ -21,3 +21,6 @@ COPY --from=builder /app/target/demo-*.jar /demo.jar
 
 # Run the web service on container startup.
 CMD ["java","-Djava.security.egd=file:/dev/./urandom","-Dserver.port=${PORT}","-jar","/demo.jar"]
+## Add Environment Variable
+# `GOOGLE_APPLICATION_CREDENTIALS` with path to file of json downloaded from GCP Control Panel 
+#gcloud builds submit --tag gcr.io/micros2/helloworld
